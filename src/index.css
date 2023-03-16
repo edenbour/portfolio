@@ -1,0 +1,62 @@
+@import url('./fonts/stylesheet.css');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#app {
+    @apply bg-zblack font-helveticaNeue;
+    cursor: none;
+}
+
+#cursor {
+    position: fixed;
+    z-index: 1000;
+    transition: all .05s;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+}
+
+a{
+    cursor: none;
+}
+
+header {
+    transition: all 0.3s ease-in-out;
+    z-index: 100;
+}
+
+header.fixedToTop {
+    position: fixed;
+    background: #272727;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.hover__effect::after {
+    content: "";
+    position: absolute;
+    background: white;
+    display: block;
+    left: 0;
+    width: 100%;
+    border-radius: 0.5rem;
+    height: 2px;
+    z-index: -1;
+    transition: transform .7s ease;
+    /* Initial state */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+.hover__effect:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
